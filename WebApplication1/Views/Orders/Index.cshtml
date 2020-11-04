@@ -9,7 +9,7 @@
 
 <div class=" row">
     <div class="col-md-4">
-        <button class="btn btn-primary" id="btn1" onclick="modal(null)">Yeni Kayıt</button>
+        <button class="btn btn-primary" id="btn1" onclick="modal(null)" style="float:right;">Yeni Kayıt</button>
     </div>
 </div>
 
@@ -29,36 +29,36 @@
         </tr>
     </thead>
     @*<tbody>
-        @foreach (Orders orders in Model)
-        {
-            <tr id="@orders.Id">
-                <td>
-                    <div class="dropdown">
-                        <button class="btn btn-group-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            İşlem
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="btn btn-group-sm btn btn-primary" onclick="modal(@orders.Id)">
-                                Düzenle
-                            </a>
-                            <a class="btn btn-group-sm btn btn-warning" onclick="warn(@orders.Id)" style="width:auto">Sil</a>
+            @foreach (Orders orders in Model)
+            {
+                <tr id="@orders.Id">
+                    <td>
+                        <div class="dropdown">
+                            <button class="btn btn-group-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                İşlem
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="btn btn-group-sm btn btn-primary" onclick="modal(@orders.Id)">
+                                    Düzenle
+                                </a>
+                                <a class="btn btn-group-sm btn btn-warning" onclick="warn(@orders.Id)" style="width:auto">Sil</a>
+                            </div>
                         </div>
-                    </div>
 
 
-                </td>
-                <td>@orders.Title</td>
-                <td>@orders.Explain</td>
-                <td>@orders.Status</td>
-                <td>@orders.Group</td>
-                <td>@orders.User</td>
-                <td>@orders.CreatorId</td>
-                <td>@orders.CreateTime</td>
-                <td>@orders.StartTime</td>
-                <td>@orders.FinishTime</td>
-            </tr>
-        }
-    </tbody>*@
+                    </td>
+                    <td>@orders.Title</td>
+                    <td>@orders.Explain</td>
+                    <td>@orders.Status</td>
+                    <td>@orders.Group</td>
+                    <td>@orders.User</td>
+                    <td>@orders.CreatorId</td>
+                    <td>@orders.CreateTime</td>
+                    <td>@orders.StartTime</td>
+                    <td>@orders.FinishTime</td>
+                </tr>
+            }
+        </tbody>*@
     <tfoot>
         <tr>
             <th scope="col">İşlemler</th>

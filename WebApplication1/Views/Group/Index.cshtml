@@ -10,7 +10,7 @@
 <h2>Grup Sayfası</h2>
 <div class=" row">
     <div class="col-md-4">
-        <button class="btn btn-primary" id="btn1" onclick="modal(null)">Yeni Kayıt</button>
+        <button class="btn btn-primary" id="btn1" onclick="modal(null)" style="float:right;">Yeni Kayıt</button>
     </div>
 </div>
 <table id="groupsTable" class="table dataTable" style="width:100%">
@@ -22,27 +22,27 @@
         </tr>
     </thead>
     @*<tbody>
-        @foreach (Group group in Model)
-        {
-            <tr id="@group.Id">
-                <td>
-                    <div class="dropdown">
-                        <button class="btn btn-group-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            İşlem
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="btn btn-group-sm btn btn-primary" onclick="modal(@group.Id)">
-                                Düzenle
-                            </a>
-                            <a class="btn btn-group-sm btn btn-warning" onclick="warn(@group.Id)" style="width:auto">Sil</a>
+            @foreach (Group group in Model)
+            {
+                <tr id="@group.Id">
+                    <td>
+                        <div class="dropdown">
+                            <button class="btn btn-group-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                İşlem
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="btn btn-group-sm btn btn-primary" onclick="modal(@group.Id)">
+                                    Düzenle
+                                </a>
+                                <a class="btn btn-group-sm btn btn-warning" onclick="warn(@group.Id)" style="width:auto">Sil</a>
+                            </div>
                         </div>
-                    </div>
-                </td>
-                <td>@group.Explain</td>
-                <td>@group.GroupName</td>
-            </tr>
-        }
-    </tbody>*@
+                    </td>
+                    <td>@group.Explain</td>
+                    <td>@group.GroupName</td>
+                </tr>
+            }
+        </tbody>*@
     <tfoot>
         <tr>
             <th scope="col">İşlemler</th>
