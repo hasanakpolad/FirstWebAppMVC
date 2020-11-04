@@ -1,0 +1,43 @@
+﻿@using WebApplication1.Models
+@model IEnumerable<Users>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Personel Takip Sistemi</h1>
+    <p class="lead">Personel takip sistemi sizin ve çalışanlarınızın daha düzenli bir şekilde işlerinizi yürütmenize olanak sağlar.</p>
+    <p><a href="https://localhost:44361/Home/About" class="btn btn-primary btn-lg">Daha Fazla &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Yetki Durumu</h2>
+        <p>
+            Şirketinizde yönetici ve çalışanlara göreve yönelik yetki verebilirsiniz.
+        </p>
+        <p><a class="btn btn-default"  onclick="de()">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Görev Durumu</h2>
+        <p>
+            Çalışanlarınız ve yöneticilerinizin görevlerini takip edebilir görev hakkında ayrıntılı bilgi alabilirsiniz.
+        </p>
+        <p><a class="btn btn-default" href="https://localhost:44361/Orders">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Grup Takibi</h2>
+        <p>
+            Yapılması gereken işleri daha sinerjik bir ortamda toplayabilirsiniz. Oluşturduğunuz gruptaki çalışanlarınızı ve görevlerini daha ayrıntılı görebilirsiniz.
+        </p>
+        <p><a class="btn btn-default" onclick="de()">Learn more &raquo;</a></p>
+    </div>
+</div>
+@section scripts{
+    <script>
+        function de() {
+            alert('Deneme');
+        }
+    </script>
+
+}

@@ -1,0 +1,66 @@
+﻿@using WebApplication1.Models
+@model IEnumerable<Notes>
+@using PagedList
+@using PagedList.Mvc
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Notlar Sayfası</h2>
+<div class=" row">
+    <div class="col-md-4">
+        <button class="btn btn-primary" id="btn1" onclick="modal(null)">Yeni Kayıt</button>
+    </div>
+</div>
+<table id="notesTable" class="table dataTable " style="width:100%">
+    <thead>
+        <tr>
+            <th scope="col">İşlemler</th>
+            <th scope="col">Başlık</th>
+            <th scope="col">Notlar</th>
+            <th scope="col">Genel</th>
+            <th scope="col">Kullanıcı</th>
+            <th scope="col">Kategori</th>
+        </tr>
+    </thead>
+    @*<tbody>
+        @foreach (Notes note in Model)
+        {
+            <tr id="@note.Id">
+                <td>
+                    <div class="dropdown">
+                        <button class="btn btn-group-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            İşlem
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="btn btn-group-sm btn btn-primary" onclick="modal(@note.Id)">
+                                Düzenle
+                            </a>
+                            <a class="btn btn-group-sm btn btn-warning" onclick="warn(@note.Id)" style="width:auto">Sil</a>
+                        </div>
+                    </div>
+                <td>@note.Title</td>
+                <td>@note.Note</td>
+                <td>@note.General</td>
+                <td>@note.Category.CategoryName</td>
+            </tr>
+        }
+    </tbody>*@
+    <tfoot>
+        <tr>
+            <th scope="col">İşlemler</th>
+            <th scope="col">Başlık</th>
+            <th scope="col">Notlar</th>
+            <th scope="col">Genel</th>
+            <th scope="col">Kullanıcı</th>
+            <th scope="col">Kategori</th>
+
+        </tr>
+
+    </tfoot>
+</table>
+
+@section scripts{
+    <script src="@Url.Content("~/Scripts/MyScripts/Notes.js")"></script>
+}

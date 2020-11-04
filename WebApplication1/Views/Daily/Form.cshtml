@@ -1,0 +1,49 @@
+﻿@{
+    Layout = null;
+}
+
+@using WebApplication1.Models
+@model Daily
+
+<div class="modal-dialog">
+    <div class="modal-content">
+        @using (Html.BeginForm("Edit", "Daily", FormMethod.Post, new { Id = "dailyForm" }))
+        {
+            <div class="modal-header">
+                <h5 class="modal-title">Düzenleme
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </h5>
+            </div>
+            <div class="modal-body">
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(x => x.Id)
+
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.LabelFor(model => model.StartTime, htmlAttributes: new { @class = "control-label" })
+                @Html.EditorFor(model => model.StartTime, new { htmlAttributes = new { @class = "form-control datepicker", @id="datepicker", placeholder = "Oluşturma Tarihi Giriniz." } })
+                @Html.ValidationMessageFor(model => model.StartTime, "", new { @class = "text-danger" })
+                <br />
+                @Html.LabelFor(model => model.FinishTime, htmlAttributes: new { @class = "control-label" })
+                @Html.EditorFor(model => model.FinishTime, new { htmlAttributes = new { @class = "form-control datepicker", placeholder = "Oluşturma Tarihi Giriniz.", } })
+                @Html.ValidationMessageFor(model => model.FinishTime, "", new { @class = "text-danger" })
+                <br />
+                @Html.LabelFor(model => model.Note, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.Note, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Note, "", new { @class = "text-danger" })
+                <br />
+                @Html.LabelFor(model => model.Status, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.EditorFor(model => model.Status, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Kapat</button>
+                <button type="submit" class="btn btn-primary">Kaydet</button>
+            </div>
+        }
+    </div>
+</div>
+

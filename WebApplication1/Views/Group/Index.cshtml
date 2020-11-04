@@ -1,0 +1,59 @@
+﻿@using WebApplication1.Models
+@model IEnumerable<Group>
+@using PagedList
+@using PagedList.Mvc
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Grup Sayfası</h2>
+<div class=" row">
+    <div class="col-md-4">
+        <button class="btn btn-primary" id="btn1" onclick="modal(null)">Yeni Kayıt</button>
+    </div>
+</div>
+<table id="groupsTable" class="table dataTable" style="width:100%">
+    <thead>
+        <tr>
+            <th scope="col">İşlemler</th>
+            <th scope="col">Açıklama</th>
+            <th scope="col">Grup İsmi</th>
+        </tr>
+    </thead>
+    @*<tbody>
+        @foreach (Group group in Model)
+        {
+            <tr id="@group.Id">
+                <td>
+                    <div class="dropdown">
+                        <button class="btn btn-group-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            İşlem
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="btn btn-group-sm btn btn-primary" onclick="modal(@group.Id)">
+                                Düzenle
+                            </a>
+                            <a class="btn btn-group-sm btn btn-warning" onclick="warn(@group.Id)" style="width:auto">Sil</a>
+                        </div>
+                    </div>
+                </td>
+                <td>@group.Explain</td>
+                <td>@group.GroupName</td>
+            </tr>
+        }
+    </tbody>*@
+    <tfoot>
+        <tr>
+            <th scope="col">İşlemler</th>
+            <th scope="col">Açıklama</th>
+            <th scope="col">Grup İsmi</th>
+
+        </tr>
+
+    </tfoot>
+</table>
+
+@section scripts{
+    <script src="@Url.Content("~/Scripts/MyScripts/Groups.js")"></script>
+}

@@ -1,0 +1,67 @@
+﻿@using WebApplication1.Models
+@model IEnumerable<Users>
+@using PagedList
+@using PagedList.Mvc
+
+@{
+    ViewBag.Title = "Personel ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Personel Sayfası</h2>
+<a class="btn btn-primary" id="btn1" onclick="modal(null)"> Yeni Kayıt</a>
+
+<table id="userTable" class="table dataTable" style="width:100%">
+    <thead>
+        <tr>
+            <th scope="col">İşlemler</th>
+            <th scope="col">Ad</th>
+            <th scope="col">Soyad</th>
+            <th scope="col">Telefon</th>
+            <th scope="col">Eposta</th>
+            <th scope="col">Yetki</th>
+        </tr>
+    </thead>
+    @*<tbody>
+            @foreach (Users user in Model)
+            {
+            <tr id="@user.Id">
+                <td>
+                    <div class="dropdown">
+                        <button class="btn btn-group-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            İşlem
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="btn btn-group-sm btn btn-primary" onclick="modal(@user.Id)">
+                                Düzenle
+                            </a>
+                            <a class="btn btn-group-sm btn btn-warning" onclick="warn(@user.Id)" style="width:auto">Sil</a>
+                        </div>
+                    </div>
+
+
+                </td>
+                <td>@user.Name</td>
+                <td>@user.Surname</td>
+                <td>@user.Phone</td>
+                <td>@user.Mail</td>
+                <td>@user.Rank</td>
+            </tr>
+            }
+        </tbody>*@
+    <tfoot>
+        <tr>
+            <th scope="col">İşlemler</th>
+            <th scope="col">Ad</th>
+            <th scope="col">Soyad</th>
+            <th scope="col">Telefon</th>
+            <th scope="col">Eposta</th>
+            <th scope="col">Yetki</th>
+        </tr>
+    </tfoot>
+
+</table>
+
+
+@section scripts{
+    <script src="@Url.Content("~/Scripts/MyScripts/User.js")"></script>
+}

@@ -1,0 +1,63 @@
+﻿@using WebApplication1.Models
+@model IEnumerable<Category>
+@using PagedList
+@using PagedList.Mvc
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Kategori Sayfası</h2>
+
+<div class="row">
+    <div class="col-md-4">
+        <button class="btn btn-primary" id="btn1" onclick="modal(null)"> Yeni Kayıt</button>
+    </div>
+</div>
+
+<table id="catTable" class="table dataTable " style="width:100%">
+    <thead>
+        <tr>
+            <th scope="col">İşlemler</th>
+            <th scope="col">Kategori İsmi</th>
+            <th scope="col">Notlar</th>
+        </tr>
+    </thead>
+    @*<tbody>
+        @foreach (Category cat in Model)
+        {
+            <tr id="@cat.Id">
+                <td>
+                    <div class="dropdown">
+                        <button class="btn btn-group-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            İşlem
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="btn btn-group-sm btn btn-primary" onclick="modal(@cat.Id)">
+                                Düzenle
+                            </a>
+                            <a class="btn btn-group-sm btn btn-warning" onclick="warn(@cat.Id)" style="width:auto">Sil</a>
+                        </div>
+                    </div>
+
+
+                </td>
+                <td>@cat.CategoryName</td>
+                <td>@cat.Notes</td>
+               
+            </tr>
+        }
+    </tbody>*@
+    <tfoot>
+        <tr>
+            <th scope="col">İşlemler</th>
+            <th scope="col">Kategori İsmi</th>
+            <th scope="col">Notlar</th>
+        </tr>
+    </tfoot>
+
+</table>
+
+@section scripts{
+    <script src="@Url.Content("~/Scripts/MyScripts/Categorys.js")"></script>
+}

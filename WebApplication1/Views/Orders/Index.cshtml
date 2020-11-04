@@ -1,0 +1,82 @@
+﻿@using WebApplication1.Models
+@model IEnumerable<Orders>
+@using PagedList
+@using PagedList.Mvc
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Görevler Sayfası</h2>
+
+<div class=" row">
+    <div class="col-md-4">
+        <button class="btn btn-primary" id="btn1" onclick="modal(null)">Yeni Kayıt</button>
+    </div>
+</div>
+
+<table id="ordersTable" class="table dataTable " style="width:100%">
+    <thead>
+        <tr>
+            <th scope="col">İşlemler</th>
+            <th scope="col">Başlık</th>
+            <th scope="col">Açıklama</th>
+            <th scope="col">Durum</th>
+            <th scope="col">Grup</th>
+            <th scope="col">Kullanıcı</th>
+            <th scope="col">Oluşturan</th>
+            <th scope="col">Oluşturma Tarih</th>
+            <th scope="col">Başlangıç Tarih</th>
+            <th scope="col">Bitiş Tarih</th>
+        </tr>
+    </thead>
+    @*<tbody>
+        @foreach (Orders orders in Model)
+        {
+            <tr id="@orders.Id">
+                <td>
+                    <div class="dropdown">
+                        <button class="btn btn-group-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            İşlem
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="btn btn-group-sm btn btn-primary" onclick="modal(@orders.Id)">
+                                Düzenle
+                            </a>
+                            <a class="btn btn-group-sm btn btn-warning" onclick="warn(@orders.Id)" style="width:auto">Sil</a>
+                        </div>
+                    </div>
+
+
+                </td>
+                <td>@orders.Title</td>
+                <td>@orders.Explain</td>
+                <td>@orders.Status</td>
+                <td>@orders.Group</td>
+                <td>@orders.User</td>
+                <td>@orders.CreatorId</td>
+                <td>@orders.CreateTime</td>
+                <td>@orders.StartTime</td>
+                <td>@orders.FinishTime</td>
+            </tr>
+        }
+    </tbody>*@
+    <tfoot>
+        <tr>
+            <th scope="col">İşlemler</th>
+            <th scope="col">Başlık</th>
+            <th scope="col">Açıklama</th>
+            <th scope="col">Durum</th>
+            <th scope="col">Grup</th>
+            <th scope="col">Kullanıcı</th>
+            <th scope="col">Oluşturan</th>
+            <th scope="col">Oluşturma Tarih</th>
+            <th scope="col">Başlangıç Tarih</th>
+            <th scope="col">Bitiş Tarih</th>
+
+        </tr>
+
+    </tfoot>
+</table>
+
+@section scripts{
+    <script src="@Url.Content("~/Scripts/MyScripts/Order.js")"></script>
+}
